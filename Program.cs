@@ -5,8 +5,8 @@ class Program
     static void Main(string[] args)
     {
         
-        Console.WriteLine("=== APBD Git Exercise - Główna gałąź main ===");
-        Console.WriteLine("Witamy w głównej wersji programu!");
+        Console.WriteLine("=== APBD Git Exercise - Wersja z gałęzi feature-conflict ===");
+        Console.WriteLine("Ta wersja ma specjalne powitanie z gałęzi konfliktowej!");
     
         Console.WriteLine("Podaj liczby oddzielone spacją:");
         string input = Console.ReadLine();
