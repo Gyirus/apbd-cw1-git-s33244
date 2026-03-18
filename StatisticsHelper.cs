@@ -43,4 +43,19 @@ public static class StatisticsHelper
         }
     
     }
+        
+        
+    public static int CalculateMin(int[] numbers)
+    {
+        if (numbers == null || numbers.Length == 0)
+            throw new ArgumentException("Array cannot be null or empty");
+            
+        int min = numbers[0];
+        for (int i = 1; i < numbers.Length; i++)
+        {
+            if (numbers[i] < min)
+                min = numbers[i];
+        }
+        return min;
+    }
 }
