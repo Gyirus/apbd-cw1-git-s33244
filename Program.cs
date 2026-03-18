@@ -7,18 +7,39 @@ class Program
         Console.WriteLine("Podaj liczby oddzielone spacją:");
         string input = Console.ReadLine();
         
-        string[] parts = input.Split(' ', StringSplitOptions.RemoveEmptyEntries);
-        int[] numbers = new int[parts.Length];
-        
-        for (int i = 0; i < parts.Length; i++)
+        if (string.IsNullOrWhiteSpace(input))
         {
-            numbers[i] = int.Parse(parts[i]);
+            Console.WriteLine("Błąd: Nie podano żadnych liczb!");
+            return;
         }
         
+        string[] parts = input.Split(' ', StringSplitOptions.RemoveEmptyEntries);
+        List<int> validNumbers = new List<int>();
+        
+        foreach (string part in parts)
+        {
+            if (int.TryParse(part, out int number))
+            {
+                validNumbers.Add(number);
+            }
+            else
+            {
+                Console.WriteLine($"Ostrzeżenie: '{part}' nie jest poprawną liczbą i zostało pominięte");
+            }
+        }
+        
+        if (validNumbers.Count == 0)
+        {
+            Console.WriteLine("Błąd: Brak poprawnych liczb do przetworzenia!");
+            return;
+        }
+        
+        int[] numbers = validNumbers.ToArray();
         int sum = StatisticsHelper.CalculateSum(numbers);
         double average = StatisticsHelper.CalculateAverage(numbers);
         
         Console.WriteLine($"Suma: {sum}");
         Console.WriteLine($"Średnia: {average}");
+        Console.WriteLine($"Liczba poprawnych liczb: {numbers.Length}");
     }
 }
