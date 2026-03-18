@@ -37,6 +37,10 @@ class Program
             return;
         }
         
+        
+        int max = StatisticsHelper.CalculateMax(numbers);
+        Console.WriteLine($"Maksimum: {max}");
+        
         int[] numbers = validNumbers.ToArray();
         int sum = StatisticsHelper.CalculateSum(numbers);
         double average = StatisticsHelper.CalculateAverage(numbers);
