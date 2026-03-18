@@ -7,6 +7,8 @@ class Program
         
         Console.WriteLine("=== APBD Git Exer ===");
         
+        Console.WriteLine("=== APBD Git Exercise v1.1 ===");
+        
         Console.WriteLine("Podaj liczby oddzielone spacją:");
         string input = Console.ReadLine();
         
