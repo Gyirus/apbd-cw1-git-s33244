@@ -23,5 +23,24 @@ public static class StatisticsHelper
             sum += num;
         }
         return (double)sum / numbers.Length;
+        
+        
+        
+    public static class StatisticsHelper
+    {
+    
+      
+            if (numbers == null || numbers.Length == 0)
+                throw new ArgumentException("Array cannot be null or empty");
+            
+            int max = numbers[0];
+            foreach (var num in numbers)
+            {
+                if (num > max)
+                    max = num;
+            }
+            return max;
+        }
+    
     }
 }
